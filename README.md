@@ -18,5 +18,5 @@ optional arguments:
   --a, --all         Provide all conversions for the string.
 ```
 
-####Author
+#### Author
 Omar López
