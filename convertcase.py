@@ -2,19 +2,13 @@ import argparse as a
 
 
 def arg_parse():
+    conversions = ['upper', 'lower', 'title', 'sentence', 'all']
+
     p = a.ArgumentParser(description='Change the case of a word or sentence.\nWrap sentences with single quotes.')
     p.add_argument('string', type=str,
                    help='A string to be converted')
-    p.add_argument('--up', "--upper", action="store_true",
-                   help='Capitalize all letters in the string.')
-    p.add_argument('--low', "--lower", action="store_true",
-                   help='Lowercase all letters in the string.')
-    p.add_argument('--tit', "--title", action="store_true",
-                   help='Titlecase all letters in the string.')
-    p.add_argument('--sen', "--sentence", action="store_true",
-                   help='Sentencecase all letters in the string.')
-    p.add_argument('--a', "--all", action="store_true",
-                   help='Provide all conversions for the string.')
+    p.add_argument('--convert', '--con', choices=conversions,
+                   help='Convert the case of the string. Allowed options are: ' + ', '.join(conversions), metavar='')
     return p.parse_args()
 
 
@@ -34,19 +28,19 @@ def main():
                   sentence]
 
     # Uppercase
-    if args.up:
+    if args.convert == 'upper':
         print(conversion[0])
     # Lowercase
-    elif args.low:
+    elif args.convert == 'lower':
         print(conversion[1])
     # Title
-    elif args.tit:
+    elif args.convert == 'title':
         print(conversion[2])
     # Sentence
-    elif args.sen:
+    elif args.convert == 'sentence':
         print(conversion[3])
     # All conversions
-    elif args.a:
+    elif args.convert == 'all':
         print(*conversion, sep='\n')
 
 
