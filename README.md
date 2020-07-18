@@ -12,7 +12,7 @@ positional arguments:
 optional arguments:
   -h, --help          show this help message and exit
   --convert , --con   Convert the case of the string. Allowed options are:
-                      upper, lower, title, sentence, all
+                      upper, lower, title, sentence, sarcastic, all
 ```
 
 #### Author
