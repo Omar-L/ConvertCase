@@ -35,8 +35,7 @@ def main():
                   lowercase,
                   title,
                   sentence,
-                  sarcastic,
-                 ]
+                  sarcastic]
 
     # Uppercase
     if args.convert == 'upper':
