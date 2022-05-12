@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import argparse as a
 from itertools import cycle
 
