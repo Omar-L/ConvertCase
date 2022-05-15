@@ -43,6 +43,7 @@ class Conversions:
     def all(s: str) -> list:
         del Conversions.all
         _list = []
+        
         for callable in Conversions.__dict__.values():
             try:
                 _list.append(callable(s))
