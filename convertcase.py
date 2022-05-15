@@ -6,10 +6,12 @@ from conversions import Conversions as c
 def arg_parse():
     conversions = c.list_of_conversions
     p = a.ArgumentParser(description='Change the case of a word or sentence.\nWrap sentences with single quotes, or double quotes if you have apostrophes in the string.')   # type: ignore
-    p.add_argument('string', type=str, 
-                    help='A string to be converted')
+
     p.add_argument('--convert', '--con', choices=conversions, required=True,
                     help='Convert the case of the string. Allowed options are: ' + ', '.join(conversions), metavar='')
+
+    p.add_argument('string', type=str, 
+                    help='A string to be converted')                    
 
     return p.parse_args()
 
