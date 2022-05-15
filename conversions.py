@@ -34,7 +34,7 @@ class Conversions:
     @staticmethod
     def alternating_case(s: str) -> str:
         """
-        Given a string, s, returns the string with aLtErNaTiNg cAsE
+        Given a string, s, returns the string with <<aLtErNaTiNg cAsE>>
         """
         case_function = cycle([str.lower, str.upper])
         return ''.join(func(character) for character, func in zip(s, case_function))
@@ -43,7 +43,7 @@ class Conversions:
     def all(s: str) -> list:
         del Conversions.all
         _list = []
-        
+
         for callable in Conversions.__dict__.values():
             try:
                 _list.append(callable(s))
